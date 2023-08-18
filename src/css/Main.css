@@ -1,0 +1,10 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    color: var(--primary-color);
+    font-family: var(--secondFont-family);
+    padding-top: 5rem;
+}
+

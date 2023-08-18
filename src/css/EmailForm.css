@@ -1,0 +1,17 @@
+.emailForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.emailForm label {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--secondFont-family);
+}
+
+.emailForm input {
+    outline: none;
+    height: 10vw;
+}
+

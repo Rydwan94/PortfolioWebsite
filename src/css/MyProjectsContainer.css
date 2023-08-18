@@ -1,0 +1,199 @@
+.hiddenCarouselContainer {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  margin-bottom: 6rem;
+  padding: 2rem;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 2s;
+}
+
+.title {
+  margin-bottom: 4rem;
+  font-family: var(--mainFont-family);
+  font-size: 5vw;
+}
+
+.carouselSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carouselButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  outline: none;
+}
+
+.carouselButton:hover {
+  transform: scale(1.2);
+}
+
+.carouselSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.carouselSection div {
+  display: flex;
+  justify-content: center;
+  font-family: "Handjet", cursive;
+}
+
+.carouselSection img {
+  max-width: 100%;
+}
+
+.inactiveSlide {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0) scale(0.7);
+  filter: brightness(0.2);
+  border-radius: 1rem;
+  z-index: 0;
+  transition: transform 0.5s, height 2s;
+  overflow: hidden;
+}
+
+.inactiveSlide div {
+  height: 0;
+}
+
+.activeSlide,
+.activeSlidePrev,
+.activeSlideNext {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  border-radius: 1rem;
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%) scale(1.1); /* Zmieniona transformacja */
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 27px -4px rgba(0, 0, 0, 1);
+  transition: transform 0.5s, z-index 0.3s;
+}
+
+.projectsInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background: var(--bg-color);
+  transition: height 1s;
+}
+
+.projectsInfo h2 {
+  font-size: 2vw;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 6px white;
+}
+
+.projectsInfo section {
+  display: flex;
+}
+
+.projectsInfo a {
+  text-decoration: none;
+}
+
+.projectsInfo button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: none;
+  font-size: 1vw;
+  color: #fff;
+  border: none;
+  height: 30px;
+  padding: 0.3rem;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: color 0.5s;
+  z-index: 1;
+}
+
+.projectsInfo button:hover {
+  color: #000000;
+}
+
+.projectsInfo button::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  transition: background-color 0.5s, width 0.5s, height 0.5s;
+  z-index: -1;
+}
+
+.projectsInfo button:hover::before {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.activeSlidePrev img,
+.activeSlideNext img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 300px;
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+
+  .activeSlide,
+  .activeSlidePrev,
+  .activeSlideNext {
+    width: 75%;
+  }
+
+  .title {
+    font-size: 6vw;
+    margin: 0;
+    padding-bottom: 5rem;
+  }
+
+  .projectsInfo h2 {
+    font-size: 3vw;
+    margin-bottom: 0.5rem;
+  }
+
+  .projectsInfo button {
+    font-size: 3vw;
+  }
+
+  .carouselButton {
+    font-size: 2rem;
+  }
+}

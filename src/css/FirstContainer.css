@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Handjet&family=Inter:wght@500&family=Open+Sans:wght@300&display=swap');
+
+.firstContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; 
+    margin-bottom: 4rem;
+}
+
+.imgContainer {
+    background-color: #ffffff09;
+    clip-path: circle(50% at 50% 50%);
+    display: flex;
+    justify-content: center;
+}
+
+.imgContainer img {
+    width: 60vw; 
+    max-width: 100%; 
+}
+
+.aboutMeDescription {
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.aboutMeDescription h2 {
+    font-family: 'Handjet', cursive;
+    font-size: 4vw; 
+    height: 10vh; 
+}
+
+.aboutMeDescription p {
+    font-size: 1.4vw; /* zmieniono na viewport units */
+}
+
+.aboutMeDescription button a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.aboutMeDescription button:hover a {
+    color: black;
+}
+
+.emailIcon {
+    padding-right: .5rem;
+}
+
+.aboutMeDescription button {
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.aboutMeDescription button::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    transition: width .3s;
+    z-index: 0;
+}
+
+.aboutMeDescription button:hover::before {
+    width: 100%;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .firstContainer {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .imgContainer {
+        clip-path: circle(40% at 50% 52%);   
+        margin-bottom: 2rem;  
+    }
+
+    .imgContainer img {
+        width: 60vw; /* zmieniono na viewport units */
+    }
+
+    .aboutMeDescription {
+        padding: 0;
+    }
+
+    .aboutMeDescription h2 {
+        font-size: 6vw; /* zmieniono na viewport units */
+        text-align: center;
+        height: 7vh; /* zmieniono na viewport units */
+    }
+
+    .aboutMeDescription p {
+        font-size: 3.5vw; /* zmieniono na viewport units */
+    }
+}
