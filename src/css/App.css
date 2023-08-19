@@ -7,7 +7,7 @@
   --secondFont-family: 'Open Sans', sans-serif;
   --font-size: 16px; /* Rozmiar czcionki bazowy */
   --bg-color: linear-gradient(134deg, #984D38 0%, #181E41 63.29%); /* Kolor tła */
-  --second-bg-color: #2F3634; 
+  --second-bg-color: #1d1f1e; 
   --border-radius: .7rem; /* Promień zaokrąglenia */
 }
 

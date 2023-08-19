@@ -13,13 +13,13 @@
   padding: 2rem;
   opacity: 1;
   transform: translateX(0);
-  transition: transform 2s, opacity 2s;
+  transition: transform 1s, opacity 1s;
 }
 
 .title {
   margin-bottom: 4rem;
   font-family: var(--mainFont-family);
-  font-size: 5vw;
+  font-size: 7vw;
 }
 
 .carouselSection {

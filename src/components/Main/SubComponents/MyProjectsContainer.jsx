@@ -41,7 +41,7 @@ const MyProjectsContainer = () => {
   useEffect(() => {
     const handleScroll = () => {
       const elementRect = myProjectsRef.current.getBoundingClientRect();
-      const elementIsVisible = elementRect.top < window.innerHeight && elementRect.bottom >= 0;
+      const elementIsVisible = elementRect.top < window.innerHeight 
       setIsVisible(elementIsVisible);
     };
   

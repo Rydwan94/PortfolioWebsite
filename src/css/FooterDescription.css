@@ -1,18 +1,68 @@
+
+.hiddenFooterDescription {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
 .footerDescription {
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #fff;
+  flex-basis: 65%;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 2s ease-in-out;
 }
 .footerDescription h2 {
-  font-family: "Handjet", cursive;
-  font-size: 9vw;
+  font-size: 5vw;
   margin-bottom: 1rem;
 }
 
+
 .footerDescription section {
-  align-self: center;
+  align-self: start;
 }
 
 .footerDescription section svg {
     padding: 0 .5rem;
     color: var(--primary-color);
+    transition: transform .5s, filter .4s;
+    font-size: 2vw;
+}
+
+.footerDescription section svg:hover {
+  transform: translateY(-5px) scale(1.2);
+  filter: drop-shadow(0 0 0.75 #fff);
+}
+
+
+@media (max-width:768px){
+  .footerDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+  }
+
+  .footerDescription h2 {
+    margin: 0;
+    font-size: 10vw;
+  }
+
+  .footerDescription section {
+    align-self: center;
+  }
+
+  .footerDescription section svg {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footerDescription {
+    padding-right: 2rem;
+  }
 }
