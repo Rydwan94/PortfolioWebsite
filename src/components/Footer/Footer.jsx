@@ -23,8 +23,8 @@ const Footer = () => {
   }, [footerRef]);
 
   return (
-    <footer ref={footerRef}>
-      <section className="mainFooterContent">
+    <footer>
+      <section ref={footerRef} className="mainFooterContent">
         <FooterDescription isVisible={isVisible} />
         <EmailForm isVisible={isVisible} />
       </section>

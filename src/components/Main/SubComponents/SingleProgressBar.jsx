@@ -1,30 +1,50 @@
-import { useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
+import "../../../css/SingleProgressBar.css";
+import { Context } from "../../../context/context";
 
+const SingleProgressBar = ({ techName, techIcon, width }) => {
+  const [progress, setProgress] = useState(0);
+  const [visible, setIsVisible] = useState(false);
+  const { progressBarRef } = useContext(Context);
 
-import '../../../css/SingleProgressBar.css'
+  useEffect(() => {
+    const handleScroll = () => {
+      const rectDirection = progressBarRef.current.getBoundingClientRect();
+      const elementIsVisible = rectDirection.top < window.innerHeight;
+      setIsVisible(elementIsVisible);
+    };
 
-const SingleProgressBar = ({techName, techIcon, width}) => {
+    window.addEventListener("scroll", handleScroll);
 
-    const [progress, setProgress] = useState(0)
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [progressBarRef]);
 
-    useEffect(() => {
-      const Interval = setInterval(() => {
-        if (progress < width) {
-          setProgress(progress + 1);
-        } else {
-          clearInterval(Interval);
-        }
-      }, .2);
-  
-      return () => clearInterval(Interval);
-    },[progress] );
+  useEffect(() => {
+    let animationFrameId; // Utwórz zmienną dla requestAnimationFrame - ważne!
 
+    const animateProgress = () => {
+      if (progress < width) {
+        setProgress(progress + 1);
+        animationFrameId = requestAnimationFrame(animateProgress);
+      }
+    };
+
+    if (visible) {
+      animationFrameId = requestAnimationFrame(animateProgress);
+    }
+
+    return () => {
+      cancelAnimationFrame(animationFrameId); // Zatrzymaj animację, gdy komponent jest odmontowywany
+    };
+  }, [visible, progress, width]); // Zmienione zależności
 
   return (
-      <section className="singleProgressBar">
-        <h3>{techName} {techIcon}</h3>
-        <div style={{width : `${progress }%`}}>{progress} %</div>
-      </section> 
+    <section ref={progressBarRef} className="singleProgressBar">
+      <h3>
+        {techName} {techIcon}
+      </h3>
+      <div style={{ width: `${progress}%` }}>{progress}%</div>
+    </section>
   );
 };
 

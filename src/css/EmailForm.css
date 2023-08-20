@@ -83,12 +83,6 @@
 }
 
 
-@media (max-width: 1200px) {
-    .emailForm {
-      
-    }
-  }
-
 @media (max-width:768px){
 
     .emailForm label {

@@ -3,16 +3,16 @@ import "../../css/Header.css";
 import { Context } from "../../context/context";
 
 const Header = () => {
-  const { myProjectsRef, footerRef } = useContext(Context);
+  const { myProjectsRef, footerRef, techStackRef } = useContext(Context);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const hideMenu = (ref) => {
     ref.current.scrollIntoView();
-    setIsMenuOpen(false)
-  };
 
-  
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="headerNavigation">
@@ -29,7 +29,7 @@ const Header = () => {
       </section>
       <nav className={`navMenu ${isMenuOpen ? "open" : ""}`}>
         <ul>
-          <li onClick={hideMenu}>About</li>
+          <li onClick={() => hideMenu(techStackRef)}>Technology</li>
           <li onClick={() => hideMenu(myProjectsRef)}>Projects</li>
           <li onClick={() => hideMenu(footerRef)}>Get In Touch</li>
         </ul>

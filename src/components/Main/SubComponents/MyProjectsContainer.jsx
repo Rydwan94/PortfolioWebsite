@@ -36,13 +36,13 @@ const MyProjectsContainer = () => {
   const { myProjectsRef } = useContext(Context);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(""); 
-  const [isVisible, setIsVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const elementRect = myProjectsRef.current.getBoundingClientRect();
       const elementIsVisible = elementRect.top < window.innerHeight 
-      setIsVisible(elementIsVisible);
+      setVisible(elementIsVisible);
     };
   
     window.addEventListener("scroll", handleScroll);
@@ -52,7 +52,6 @@ const MyProjectsContainer = () => {
     };
   }, [myProjectsRef]);
 
-  console.log(isVisible)
   const setActiveSlide = (index) => {
     if (index < currentSlide) {
       setDirection("Prev");
@@ -74,6 +73,8 @@ const MyProjectsContainer = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % imagesArray.length);
   };
 
+  console.log(visible)
+
   const imagesList = imagesArray.map((image, index) => (
     <div
       key={image.id}
@@ -94,7 +95,7 @@ const MyProjectsContainer = () => {
   ));
 
   return (
-    <div ref={myProjectsRef} className={isVisible ? "carouselContainer" : "hiddenCarouselContainer" }>
+    <div ref={myProjectsRef} className={visible ? "carouselContainer" : "hiddenCarouselContainer" }>
       <h2 className="title">My Projects</h2>
       <section className="carouselSection">
         <button className="carouselButton" onClick={prevSlide}>
