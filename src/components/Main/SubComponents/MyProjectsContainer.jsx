@@ -73,8 +73,6 @@ const MyProjectsContainer = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % imagesArray.length);
   };
 
-  console.log(visible)
-
   const imagesList = imagesArray.map((image, index) => (
     <div
       key={image.id}

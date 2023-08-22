@@ -1,0 +1,16 @@
+.modal {
+    position: fixed;
+    top: 20%;
+    left: 100%;
+    transform: translate(-100%,-60%);
+    border-radius: 1rem 0 0 1rem;
+    background:var(--bg-color);
+    border: none;
+    z-index: 100;
+}
+
+.modal::backdrop {
+    backdrop-filter: blur(3px);
+}
+
+
