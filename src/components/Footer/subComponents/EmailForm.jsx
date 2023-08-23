@@ -13,8 +13,6 @@ const EmailForm = ({ isVisible }) => {
 
   const index = email.includes("@")
 
-  console.log(index)
-
   const closeModal = () => {
     setIsModalOpen(false);
     setValidationMessage(null);
@@ -46,7 +44,7 @@ const EmailForm = ({ isVisible }) => {
     try {
       const result = await emailjs.sendForm('service_jboehkc', 'template_8h9a33j', e.target, 'QeZJWV4E4Bvm7v5Q-');
       setValidationMessage(
-        <ValidateMessage resultText={result.text} closeModal={closeModal} isModalOpen={isModalOpen} />
+        <ValidateMessage resultText={`Wiadomość wysłana ${result.text}`} closeModal={closeModal} isModalOpen={isModalOpen} />
       );
     } catch (error) {
       setValidationMessage(

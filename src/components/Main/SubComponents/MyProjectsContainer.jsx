@@ -37,20 +37,26 @@ const MyProjectsContainer = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(""); 
   const [visible, setVisible] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const elementRect = myProjectsRef.current.getBoundingClientRect();
-      const elementIsVisible = elementRect.top < window.innerHeight 
-      setVisible(elementIsVisible);
+      if (!hasScrolled) {
+        const elementRect = myProjectsRef.current.getBoundingClientRect();
+        const elementIsVisible = elementRect.top < window.innerHeight;
+        setVisible(elementIsVisible);
+        if (elementIsVisible) {
+          setHasScrolled(true); // Oznacz, że funkcja została już wykonana
+        }
+      }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [myProjectsRef]);
+  }, [myProjectsRef, hasScrolled]);
 
   const setActiveSlide = (index) => {
     if (index < currentSlide) {
