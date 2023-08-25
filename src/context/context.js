@@ -6,6 +6,7 @@ export const Context = createContext()
 const RefProvider = ({children}) => {
 
     const Refs = {
+        myHobbiesRef: useRef(),
         techStackRef: useRef(),
         progressBarRef: useRef(),
         myProjectsRef: useRef(),

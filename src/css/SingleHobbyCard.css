@@ -1,0 +1,90 @@
+.hobbieCard {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  box-shadow: inset -100px -1px 68px -16px rgba(8, 8, 8, 1);
+   width: 400px;
+  max-width: 90%;
+  height: 500px;
+  background-position: right;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.hobbieCard:not(:first-child){
+    margin-left: -100px;
+}
+
+.hobbieCard:hover {
+    transform: translate(-20px, -26px) rotate(3deg) scale(1.1);
+    z-index: 3;
+    background-position: left;
+}
+
+.hobbieCard:hover ~ .hobbieCard {
+    transform: translateX(130px);
+}
+
+.hobbieCard figcaption {
+    position: absolute;
+    bottom: 3%;
+  font-size: 4vw;
+  font-family: var(--mainFont-family);
+
+}
+
+.hobbieCard figure p {
+  padding: 1rem;
+}
+
+
+@media (max-width: 1200px) {
+    .hobbieCard {
+        width: 300px;
+    }
+}
+
+
+@media (max-width: 768px) {
+  .hobbieCard {
+    display: flex;
+    flex-direction: column;
+    background-position: right;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    box-shadow: inset 0px 81px 100px 0px rgba(0, 0, 0, 1);
+  }
+
+  .hobbieCard:hover {
+    background-position: left;
+  }
+
+  .hobbieCard:not(:first-child){
+    margin-left: 0;
+    margin-top: -90px;
+}
+
+.hobbieCard:hover ~ .hobbieCard {
+    transform: translateY(130px);
+}
+
+  .hobbieCard figure {
+    margin-bottom: 5rem;
+    max-width: 350px;
+  }
+
+  .hobbieCard figcaption {
+    top: 50%;
+    font-size: 6vw;
+  }
+
+  .hobbieCard figure p {
+    font-size: 3vw;
+  }
+}

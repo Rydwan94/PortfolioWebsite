@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* height: auto; */
+  font-family: var(--mainFont-family);
   margin-bottom: 25rem;
   padding: 2rem;
   opacity: 1;
@@ -17,7 +17,11 @@
 }
 
 .title {
-  margin-bottom: 4rem;
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 5rem;
+  width: 80%;
+  border-bottom: 1px solid white;
   font-family: var(--mainFont-family);
   font-size: 7vw;
 }
@@ -127,7 +131,8 @@
   display: flex;
   align-items: center;
   background: none;
-  font-size: 1vw;
+  font-family: var(--mainFont-family);
+  font-size: 1.5vw;
   color: #fff;
   border: none;
   height: 30px;
@@ -179,9 +184,7 @@
   }
 
   .title {
-    font-size: 6vw;
-    margin: 0;
-    padding-bottom: 5rem;
+    font-size: 7vw;
   }
 
   .projectsInfo h2 {

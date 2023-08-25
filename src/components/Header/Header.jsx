@@ -3,7 +3,7 @@ import "../../css/Header.css";
 import { Context } from "../../context/context";
 
 const Header = () => {
-  const { myProjectsRef, footerRef, techStackRef } = useContext(Context);
+  const { myProjectsRef, footerRef, techStackRef, myHobbiesRef } = useContext(Context);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -31,6 +31,7 @@ const Header = () => {
         <ul>
           <li onClick={() => hideMenu(techStackRef)}>Technology</li>
           <li onClick={() => hideMenu(myProjectsRef)}>Projects</li>
+          <li onClick={() => hideMenu(myHobbiesRef)}>My Hobby</li>
           <li onClick={() => hideMenu(footerRef)}>Get In Touch</li>
         </ul>
       </nav>

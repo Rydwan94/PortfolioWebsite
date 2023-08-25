@@ -13,12 +13,12 @@
   width: 100%;
   opacity: 1;
   transition: opacity 1.5s ease-in-out;
+  font-family: var(--mainFont-family);
 }
 
 .techStackTitle {
   text-align: center;
   font-size: 5vw;
-  font-family: var(--mainFont-family);
   margin-bottom: 5rem;
   padding-bottom: 2rem;
   width: 60%;
