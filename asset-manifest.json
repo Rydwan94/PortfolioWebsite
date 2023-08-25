@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/PortfolioWebsite/static/css/main.3f940284.css",
-    "main.js": "/PortfolioWebsite/static/js/main.20f09253.js",
+    "main.css": "/PortfolioWebsite/static/css/main.eb48f56f.css",
+    "main.js": "/PortfolioWebsite/static/js/main.157c7b64.js",
     "static/media/imageSite.png": "/PortfolioWebsite/static/media/imageSite.bcf8d31545da9b8ce46f.png",
     "static/media/gamesSite.png": "/PortfolioWebsite/static/media/gamesSite.dba9f92596b0de6a2531.png",
+    "static/media/gymHobby.png": "/PortfolioWebsite/static/media/gymHobby.e4710afd97cf19789982.png",
     "static/media/me.png": "/PortfolioWebsite/static/media/me.b134bd97d192c1d5d0e2.png",
+    "static/media/judoHobby.png": "/PortfolioWebsite/static/media/judoHobby.376d02a95064635d7cdd.png",
+    "static/media/gamingHobby.png": "/PortfolioWebsite/static/media/gamingHobby.54a0729f32faf7e36b34.png",
     "static/media/judo.png": "/PortfolioWebsite/static/media/judo.194097a5988e76182bb5.png",
     "index.html": "/PortfolioWebsite/index.html",
-    "main.3f940284.css.map": "/PortfolioWebsite/static/css/main.3f940284.css.map",
-    "main.20f09253.js.map": "/PortfolioWebsite/static/js/main.20f09253.js.map"
+    "main.eb48f56f.css.map": "/PortfolioWebsite/static/css/main.eb48f56f.css.map",
+    "main.157c7b64.js.map": "/PortfolioWebsite/static/js/main.157c7b64.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f940284.css",
-    "static/js/main.20f09253.js"
+    "static/css/main.eb48f56f.css",
+    "static/js/main.157c7b64.js"
   ]
 }
