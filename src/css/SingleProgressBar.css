@@ -34,7 +34,7 @@
     border-radius: .4rem;
     box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 1);
     overflow: hidden;
-    transition: width .2s ;
+    transition: width .5s ;
   }
 
 
